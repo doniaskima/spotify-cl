@@ -1,6 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
-const redirectUri = "http://localhost:8000/";
+const redirectUri = "http://localhost:3000/";
 const clientId = "1c86758e62a541f8975d0019dbb77698";
 
 const scopes = [
