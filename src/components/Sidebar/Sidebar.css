@@ -1,0 +1,8 @@
+.sidebar {
+    border: 1px solid black;
+    height: 100vh;
+    background-color: #040404;
+    color: white;
+    height: 100vh;
+    min-width: 240px;
+}
