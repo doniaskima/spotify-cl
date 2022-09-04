@@ -3,6 +3,66 @@
     position: fixed;
     bottom: 0;
     height: 70px;
-    width: 100%;
+    width: 97%;
     padding: 20px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.left-footer {
+    width: 300px;
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.green-footer {
+    color: #1ed15e;
+}
+
+.song>h4 {
+    margin-bottom: 5px;
+}
+
+.song>p {
+    margin-bottom: 12px;
+}
+
+.center-footer {
+    flex: 0.4;
+    max-width: 300px;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-footer {
+    flex: 0.3;
+    max-width: 300px;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.album {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+    display: flex;
+}
+
+.footer-icon:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+
+.green-footer:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
 }
