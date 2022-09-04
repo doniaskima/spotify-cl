@@ -3,6 +3,7 @@ import './App.css';
 import Login from "./components/Login/Login"
 import { getTokenFromUrl } from "./components/spotify/Spotify";
 import SpotifyWebApi from "spotify-web-api-js";
+import Player from './components/Player/Player';
 
 const spotify = new SpotifyWebApi()
 function App() {
@@ -13,9 +14,9 @@ function App() {
     const _token = hash.access_token;
     // temperory token 
     if (_token) {
-      setToken(_token);
+      setToken(_token); 
       spotify.setAccessToken(_token)//between react and spotify
-      spotify.getMe().then(user => {
+      spotify.getMe().then(user => { // get my account cool :)
         console.log("fucking", user)
       })
     }
@@ -23,7 +24,7 @@ function App() {
   return (
 
     <div className="App">
-      {token ? (<h1>I am Logged in </h1>) : (
+      {token ? <Player/> : (
         <Login />
       )}
     </div>
