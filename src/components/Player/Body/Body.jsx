@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Body.css";
-
-const Body = () => {
+import Header from "./Header/Header"
+const Body = ({ spotify }) => {
     return (
         <div className="body">
-            Iam the Body
+            <Header spotify={spotify} />
         </div>
     )
 }
