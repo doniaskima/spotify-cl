@@ -6,3 +6,27 @@
     height: 100vh;
     min-width: 240px;
 }
+
+.sidbar-logo {
+    margin-right: auto;
+    padding: 10px;
+    height: 70px;
+    object-fit: contain;
+    /* protect ur aspect */
+}
+
+.sidebar-title{
+    font-size:12px;
+    padding:5px;
+    margin-left:10px;
+}
+.sidebar>p{
+    margin-top:10px;
+    margin-left:20px;
+    font-size:14px;
+}
+.sidebar>hr{
+    border:1px solid #282828;
+    width:90%;
+    margin:10px auto;
+}
