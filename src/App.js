@@ -8,15 +8,19 @@ import { useStateValue } from "./StateProvider"
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
-  const [token, setToken] = useState(null);
+  const [{ user, token }, dispatch] = useStateValue();
+
   useEffect(() => {
     const hash = getTokenFromUrl()
     window.location.hash = "";
     const _token = hash.access_token;
     // temperory token 
     if (_token) {
-      setToken(_token);
+      dispatch({
+        type: "SET_TOKEN",
+        token: _token,
+      })
+
       spotify.setAccessToken(_token)//between react and spotify
       spotify.getMe().then(user => { // get my account cool :)
         console.log("fucking", user)
@@ -28,9 +32,12 @@ function App() {
     }
     console.log("i have a token", token)
   }, [])
+  console.log(":*", token)
+  console.log(":)", user)
+
   return (
     <div className="App">
-      {token ? <Player /> : (
+      {token ? <Player spotify={spotify} /> : (
         <Login />
       )}
     </div>
