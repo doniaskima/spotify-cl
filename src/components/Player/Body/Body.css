@@ -5,6 +5,7 @@
     background-color: rgba(91, 87, 115);
     color: white;
     padding: 30px;
+    overflow-y: overlay;
 }
 
 .body-info {
