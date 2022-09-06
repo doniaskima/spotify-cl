@@ -16,6 +16,7 @@ function App() {
     const _token = hash.access_token;
     // temperory token 
     if (_token) {
+      spotify.setAccessToken(_token);
       dispatch({
         type: "SET_TOKEN",
         token: _token,
@@ -23,17 +24,17 @@ function App() {
 
       spotify.setAccessToken(_token)//between react and spotify
       spotify.getMe().then(user => { // get my account cool :)
-        console.log("fucking", user)
+        console.log(":=", user)
         dispatch({
           type: "SET_USER",
           user: user,
         });
       })
-   
+
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
-          playlists:playlists,
+          playlists,
         });
       });
       spotify.getPlaylist('37i9dQZF1DWWvvyNmW9V9a').then(response => {
@@ -44,11 +45,11 @@ function App() {
       })
     }
     console.log("i have a token", token)
-      
-  }, [])
+
+  }, [token, dispatch])
   console.log(":*", token)
   console.log(":)", user)
- 
+
 
   return (
     <div className="App">
@@ -56,7 +57,7 @@ function App() {
         {!token && <Login />}
         {token && <Player spotify={spotify} />}
       </div>
-      
+
     </div>
   );
 }

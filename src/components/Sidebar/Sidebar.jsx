@@ -6,7 +6,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import { useStateValue } from "../../StateProvider"
 export const Sidebar = () => {
-      const [{ playlists }, dispatch] = useStateValue();
+    const [{ playlists }, dispatch] = useStateValue();
     return (
         <div className="sidebar">
             <img
@@ -14,16 +14,16 @@ export const Sidebar = () => {
                 src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
                 alt=""
             />
-            <SidebarOp title="Home" Icon={HomeIcon}/>
-            <SidebarOp title="Search" Icon={SearchIcon}/>
-            <SidebarOp title="Your Library" Icon={LibraryMusicIcon}/>
-                  
+            <SidebarOp title="Home" Icon={HomeIcon} />
+            <SidebarOp title="Search" Icon={SearchIcon} />
+            <SidebarOp title="Your Library" Icon={LibraryMusicIcon} />
+
             <strong className="sidebar-title">PLAYLSTS</strong>
-        <hr/>
-          {playlists?.items?.map((playlist) => (
-              <SidebarOp title={playlist.name} />
-      ))}
-         
+            <hr />
+            {playlists?.items?.map((playlist) => (
+                <SidebarOp title={playlist.name} />
+            ))}
+
         </div>
     )
 }
